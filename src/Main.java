@@ -27,8 +27,7 @@ public class Main {
 
         persons.stream()
                 .filter(x -> x.getEducation() == Education.HIGHER)
-                .filter(x -> x.getAge() > 18 && x.getAge() < 60 && x.getSex() == Sex.WOMAN)
-                .filter(x -> x.getAge() > 18 && x.getAge() < 65 && x.getSex() == Sex.MAN)
+                .filter(x -> x.getAge() > 18 && x.getAge() < 60 && x.getSex() == Sex.WOMAN || x.getAge() > 18 && x.getAge() < 65 && x.getSex() == Sex.MAN)
                 .sorted(Comparator.comparing(Person::getFamily))
                 .collect(Collectors.toList());
     }
